@@ -1,14 +1,17 @@
 package com.datatstructure.stack;
 
+import java.lang.reflect.Array;
 import java.util.EmptyStackException;
 
-public class Stack {
+public class Stack<T> {
 	final static int MAX = 5;
-	private Integer [] stackArray  = new Integer [MAX];
+	private T [] stackArray ;// = new T [MAX];
 	int top;
 	
-	Stack(){
+	@SuppressWarnings("unchecked")
+	Stack(Class<T> c){
 		top=-1;
+		stackArray= (T[]) Array.newInstance(c, MAX);
 	}
 	
 	public boolean isEmpty(int top){
@@ -23,7 +26,7 @@ public class Stack {
 		else return false;
 	}
 	
-	public boolean push(int x){
+	public boolean push(T x){
 		if(!isFull(top)){
 			top++;
 			stackArray[top]=x ;
@@ -33,7 +36,7 @@ public class Stack {
 			return false;
 	}
 	
-	public int peek() {
+	public T peek() {
 		if(isEmpty(top)){
 			throw new EmptyStackException();
 		}
@@ -41,10 +44,11 @@ public class Stack {
 		return stackArray[top];
 	}
 	
-	public int pop() {
-		if (isEmpty(top))
-			return -1123125;
-		int x = stackArray[top];
+	public T pop() {
+		//needs to be implemented below method
+//		if (isEmpty(top))
+//			return -1123125;
+		T x = stackArray[top];
 		top--;
 		return x;
 	}
