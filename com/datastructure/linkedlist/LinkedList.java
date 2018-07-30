@@ -30,9 +30,14 @@ public class LinkedList<E> {
 		Node<E> tempNode=head;
 		int counter=0;
 		do{
-			if( tempNode.getNext().getData().equals(data) ){
-				tempNode=tempNode.getNext().getNext();
-				head=tempNode;//remove this line
+			if(counter==0){
+				head=tempNode.getNext();
+				break;
+			}else if( tempNode.getNext().getData()!=null && tempNode.getNext().getData().equals(data) ){
+				if(tempNode.getNext().getNext()==null)
+					tempNode.setNext(null);
+				else
+					tempNode.setNext(tempNode.getNext().getNext());
 				break;
 			}
 			tempNode=tempNode.getNext();
