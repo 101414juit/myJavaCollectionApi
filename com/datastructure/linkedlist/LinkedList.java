@@ -23,6 +23,21 @@ public class LinkedList<E> {
 		getIncrementSize();
 	}
 	
+	//Need to complete this method
+	public void remove (E data){
+		if(head==null)
+			System.out.println("List has not been created!! Cannot delete data");
+		Node<E> tempNode=head;
+		int counter=0;
+		do{
+			if( tempNode.getNext().getData().equals(data) ){
+				tempNode=tempNode.getNext().getNext();
+				head=tempNode;//remove this line
+				break;
+			}
+			tempNode=tempNode.getNext();
+		}while(tempNode.getNext()!=null);
+	}
 	
 	public void print(){
 		if(head==null)
