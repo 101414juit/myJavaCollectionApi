@@ -1,0 +1,18 @@
+What is Abstraction
+Abstraction refers to the concept of hiding the complexities of a system from the users of that system.
+
+Example of abstraction: Lets say we have a mobile app for getting the latest stock quote. For the user its as simple as entering the company name or company stock code in the app and pressing the ‘fetch’ button. Internally the app would execute a sequence of steps like hooking on to the data connection/wifi, then invoking a RESTful API on a backend server. This backend server will hit the database or make another call to an external stock quote service provider to get the stock quote. The actual stock quote then travel backwards in the chain and gets displayed in the app.
+
+For the user of the app its only 2 simple steps of entering the stock code and pressing the fetch button but actually the whole working, as explained above, is abstracted out from the user.
+
+What is Encapsulation
+Encapsulation is a language construct which bundles data and behavior together. In addition, it restricts access to this data and behavior bundled together.
+
+Example of encapsulation: A class in java is a simplest example of encapsulation. It keeps the data(variables) and behavior(methods) of an entity together. A class also restricts access to these data and behavior through the use of access specifiers. The concept of keeping instance variables as private and then provided refined access through getters & setters is an example of what is known as data hiding.
+
+Where the confusion happens
+The concept where maximum developers get confused between abstraction and encapsulation is when they try to relate these to data hiding.
+
+Abstraction also hides, but as explained above – abstraction hides complexity. Encapsulation, on the other hand, keeps the data/behaviour it encapsulates together & controls access to them.In other words, encapsulation  hides the constructs it encapsulates.
+
+To summarise: Abstraction hides complexity of the system by presenting to the user a simplified interface. Whereas encapsulation is all about bundling of related data and behaviour together while restricting/controlling access to them, and in the process partially or fully hiding these members.
